@@ -1,0 +1,89 @@
+body {
+  text-align: center;
+  font-weight: bold;
+}
+
+.task-container {
+  border: 2px solid black;
+}
+
+.first-task {
+  padding: 10px;
+  background-color: azure;
+  height: auto;
+  .circle-container {
+      border: 2px solid black;
+      height: 300px;
+      position: relative;
+      .yellow-circle {
+          border: 2px solid black;
+          background-color: yellow;
+          height: 100px;
+          width: 100px;
+          border-radius: 50%;
+          position: absolute;
+          animation: moveCircle 10s infinite;
+          transition: opacity 0.5s linear;
+          &:hover {
+              opacity: 0;
+          }
+      }
+  }
+}
+
+.second-task {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding:0 20px 20px 20px;
+  background-color: azure;
+  .loading-container {
+      width: 100%;
+      height: 7px;
+      background-color: #fff;
+      border: 2px solid black;
+      .loading-bar {
+          width: 0;
+          height: 7px;
+          background-color: rgb(104, 226, 104);
+          animation: load 3s infinite;
+      }
+  }
+}
+
+@keyframes moveCircle {
+  0% {
+      left: 0;
+      top: 0;
+      border-radius: 50%;
+  }
+  25% {
+      left: calc(100% - 100px);
+      top: 0;
+      border-radius: 0;
+  }
+  50% {
+      left: calc(100% - 100px);
+      top: calc(100% - 100px);
+      border-radius: 50%;
+  }
+  75% {
+      left: 0;
+      top: calc(100% - 100px);
+      border-radius: 0;
+  }
+  100% {
+      left: 0;
+      top: 0;
+      border-radius: 50%;
+  }
+}
+
+@keyframes load {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
