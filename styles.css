@@ -1,0 +1,91 @@
+body {
+  padding: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.task-container {
+  border: 2px solid black;
+}
+
+.first-task {
+  padding: 10px;
+  background-color: azure;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.first-task .yellow-circle {
+  border: 2px solid black;
+  background-color: yellow;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  animation: moveCircle 10s infinite;
+  transition: opacity 0.5s ease-in-out;
+}
+.first-task .yellow-circle:hover {
+  opacity: 0;
+}
+.first-task .yellow-circle p {
+  padding-top: 20%;
+}
+
+.second-task {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: azure;
+}
+.second-task .loading-container {
+  width: 100%;
+  height: 7px;
+  background-color: #fff;
+  border: 2px solid black;
+}
+.second-task .loading-container .loading-bar {
+  width: 0;
+  height: 7px;
+  background-color: rgb(104, 226, 104);
+  animation: load 3s infinite;
+}
+
+@keyframes moveCircle {
+  0% {
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+  }
+  25% {
+    top: 0;
+    left: calc(100% - 100px);
+    border-radius: 0;
+  }
+  50% {
+    top: calc(100% - 100px);
+    left: calc(100% - 100px);
+    border-radius: 50%;
+  }
+  75% {
+    top: calc(100% - 100px);
+    left: 0;
+    border-radius: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+  }
+}
+@keyframes load {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
